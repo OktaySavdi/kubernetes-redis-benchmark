@@ -4,7 +4,7 @@
 
 We will do a load test on redis with redis-benchmark. You can do your redis sentinel or redis cluster performance tests
 
-You can access the redis bencmark code prepared with dotnet core. Code repo for image [github\RedisBenchmarkUI](https://github.com/OktaySavdi/RedisBenchmarkUI)
+You can access the redis benchmark code prepared with dotnet core. Code repo for image [github\RedisBenchmarkUI](https://github.com/OktaySavdi/RedisBenchmarkUI)
 
 ## Start the helloworld service
 
