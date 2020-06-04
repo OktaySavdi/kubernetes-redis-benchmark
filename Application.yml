@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: benchmark
+  name: benchmark
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: benchmark
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: benchmark
+    spec:
+      containers:
+      - image: quay.io/oktaysavdi/redisbenchmark # code https://github.com/OktaySavdi/RedisBenchmarkUI
+        name: benchmark
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: benchmark
+  labels:
+    run: benchmark
+spec:
+  ports:
+  - port: 80
+    name: http
+  type: ClusterIP
+  selector:
+    run: benchmark
